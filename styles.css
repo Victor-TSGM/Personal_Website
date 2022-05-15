@@ -20,7 +20,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  animation: backgroundTransition 20s ease-in-out infinite;
+  animation: backgroundTransition 8s ease-in-out infinite;
 }
 
 h1, h2 {
@@ -222,7 +222,6 @@ h1, h2 {
   height: 300px;
   width: 400px;
   margin: 3rem 0 0 0;
-  background-image: url(./assets/git.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -235,6 +234,18 @@ h1, h2 {
   transition: 0.3s;
 }
 
+#card_1 {
+  background-image: url(./assets/git.jpg);
+}
+
+#card_2 {
+  background-image: url(./assets/linkedin.jpg);
+}
+
+#card_3 {
+  background-image: url(./assets/insta.jpg);
+}
+
 .card-text {
   width: 40%;
   font-family: sans-serif;
@@ -242,7 +253,12 @@ h1, h2 {
   color: #343434;
 }
 
-.card-wrapper {
+.card a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a .card-wrapper {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -251,16 +267,6 @@ h1, h2 {
   position: relative;
 }
 
-.card-wrapper::before {
-  content: '';
-  position: absolute;
-  height: 100px;
-  width: 100px;  
-  display: block;
-  border: 1px solid white;
-  opacity: 0;
-  transition: 0.3s;
-}
 
 .card-wrapper h2 {
   font-size:40px;
@@ -279,19 +285,41 @@ h1, h2 {
   transition: 0.3s;
 }
 
+a .card-wrapper::before {
+  content: '';
+  position: absolute;
+  height: 100px;
+  width: 100px;  
+  display: block;
+  border: 1px solid white;
+  opacity: 0;
+  transition: 0.3s;
+}
+
 .card:hover {
   filter: grayscale(0);
 }
 
-.card:hover > .card-wrapper::before {
+.card:hover >  a .card-wrapper::before {
   opacity: 1;
   width: 350px;
   height: 250px;  
 }
 
-.card:hover > .card-wrapper p {
+.card:hover >  a .card-wrapper p {
   font-size: 14px;
   opacity: 1;
   visibility: visible;
+}
+
+/* Footer */
+
+footer {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  background-color: rgb(5, 16, 86);
 }
 
